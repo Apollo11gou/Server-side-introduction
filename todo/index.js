@@ -10,13 +10,21 @@ function add(task){
 }
 
 /**
+ * タスクと完了したかどうかが含まれるオブジェクトを受け取り、完了したかを返す
+ * @param {object} taskAndIsDonePair
+ * @return {boolean} 完了してないかどうか
+ */
+function isNotDone(taskAndIsDonePair){
+  return !isDone{taskAndIsDonePair};
+}
+/**
  * TODOの一覧の配列を取得する
  * @return {array}
  */
 function list(){
   return tasks
   // タスクが完了していれば false を、TODO ならば true を返す
-  .filter(task => !task.state)
+  .filter(task =>isNotDone(task))
   // 引数 t で配列の要素を取得して、選別されたタスクの name プロパティから文字列を取得し、その文字列だけの値に変換する
   .map(t => t.name);
 }
