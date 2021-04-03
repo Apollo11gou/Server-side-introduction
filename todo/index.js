@@ -15,8 +15,9 @@ function add(task){
  * @return {boolean} 完了してないかどうか
  */
 function isNotDone(taskAndIsDonePair){
-  return !isDone{taskAndIsDonePair};
+  return !isDone(taskAndIsDonePair);
 }
+
 /**
  * TODOの一覧の配列を取得する
  * @return {array}
