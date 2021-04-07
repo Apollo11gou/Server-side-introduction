@@ -5,6 +5,13 @@ let tasks = [];
 const fs = require("fs");
 const fileName = './tasks.json'
 
+//同期的ににファイルから復元
+try{
+  const data = fs.readFileSync(fileName, 'utf8');
+  tasks = JSON.parse(data);
+} catch(ignore){
+  console.log(fileName + 'から復元できませんでした');
+}
 /**
  * タスクをファイルに保存する関数
  */
